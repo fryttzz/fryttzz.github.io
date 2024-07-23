@@ -1,9 +1,9 @@
-import './style.css'
-import photo from './public/matheus.jpg'
-import linkedin from './public/linkedin.svg'
-import github from './public/github.svg'
-import instagram from './public/instagram.svg'
-import email from './public/email.svg'
+
+var photo =  './public/matheus.jpg'
+var linkedin = './public/linkedin.svg'
+var github = './public/github.svg'
+var instagram = './public/instagram.svg'
+var email = './public/email.svg'
 
 document.querySelector('#app').innerHTML = `
   <div class='main'>
