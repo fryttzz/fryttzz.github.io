@@ -1,9 +1,9 @@
 
-var photo =  './public/matheus.jpg'
-var linkedin = './public/linkedin.svg'
-var github = './public/github.svg'
-var instagram = './public/instagram.svg'
-var email = './public/email.svg'
+var photo = 'matheus.jpg'
+var linkedin = 'linkedin.svg'
+var github = 'github.svg'
+var instagram = 'instagram.svg'
+var email = 'email.svg'
 
 document.querySelector('#app').innerHTML = `
   <div class='main'>
@@ -40,67 +40,76 @@ document.querySelector('#app').innerHTML = `
       </div>
     </setion>
     <main class='content'>
-      <p></p>
-      <p>Apaixonado por tecnologia desde muito novo, sempre mexendo em eletrônicos antigos (montando e desmontando).
-      Comecei minha jornada no muito da TECH atravás do curso Técnico em Informática do Instituto Federal de Santa Catarina em 2017, finalizado em 2018.
-      Iniciei o ensino superior na gradução de Ciências da Computação no Centro Universitário Unifacvest em 2019, onde também tive minha primeira oportunidade na área como Suporte Técnico</p>
+      <h1>sobre mim</h1>
+      <p>Apaixonado por tecnologia desde muito novo, brasileiro, nascido em Lages, SC, no ano de 2001. Comecei minha jornada no mundo TECH através do curso Técnico em Informática do Instituto Federal de Santa Catarina. Iniciei o ensino superior na gradução de Ciências da Computação no Centro Universitário Unifacvest em 2019, onde também tive minha primeira oportunidade de emprego como Suporte Técnico. Atualmente sou Técnico em Informática na empresa Profuzzy Consultoria e Projetos. Nas horas vagas estou arranhando meu violão ou rabiscando algum papel 🎸🎨</p>
     </main>
+    <div id="career">
+        <h1>experiência</h1>
+        <div>
+            <h3>Técnico em Informática</h3>
+            <p>Descrição</p>
+        </div>
+        <div>
+            <h3>Suporte Técnico</h3>
+            <p>Descrição</p>
+        </div>
+    </div>
   </div>
 `
 
 var TxtType = function (el, toRotate, period) {
-  this.toRotate = toRotate;
-  this.el = el;
-  this.loopNum = 0;
-  this.period = parseInt(period, 10) || 2000;
-  this.txt = '';
-  this.tick();
-  this.isDeleting = false;
+    this.toRotate = toRotate;
+    this.el = el;
+    this.loopNum = 0;
+    this.period = parseInt(period, 10) || 2000;
+    this.txt = '';
+    this.tick();
+    this.isDeleting = false;
 };
 
 TxtType.prototype.tick = function () {
-  var i = this.loopNum % this.toRotate.length;
-  var fullTxt = this.toRotate[i];
+    var i = this.loopNum % this.toRotate.length;
+    var fullTxt = this.toRotate[i];
 
-  if (this.isDeleting) {
-    this.txt = fullTxt.substring(0, this.txt.length - 1);
-  } else {
-    this.txt = fullTxt.substring(0, this.txt.length + 1);
-  }
+    if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
 
-  this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+    this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
 
-  var that = this;
-  var delta = 200 - Math.random() * 100;
+    var that = this;
+    var delta = 200 - Math.random() * 100;
 
-  if (this.isDeleting) { delta /= 2; }
+    if (this.isDeleting) { delta /= 2; }
 
-  if (!this.isDeleting && this.txt === fullTxt) {
-    delta = this.period;
-    this.isDeleting = true;
-  } else if (this.isDeleting && this.txt === '') {
-    this.isDeleting = false;
-    this.loopNum++;
-    delta = 500;
-  }
+    if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+    }
 
-  setTimeout(function () {
-    that.tick();
-  }, delta);
+    setTimeout(function () {
+        that.tick();
+    }, delta);
 };
 
 window.onload = function () {
-  var elements = document.getElementsByClassName('typewrite');
-  for (var i = 0; i < elements.length; i++) {
-    var toRotate = elements[i].getAttribute('data-type');
-    var period = elements[i].getAttribute('data-period');
-    if (toRotate) {
-      new TxtType(elements[i], JSON.parse(toRotate), period);
+    var elements = document.getElementsByClassName('typewrite');
+    for (var i = 0; i < elements.length; i++) {
+        var toRotate = elements[i].getAttribute('data-type');
+        var period = elements[i].getAttribute('data-period');
+        if (toRotate) {
+            new TxtType(elements[i], JSON.parse(toRotate), period);
+        }
     }
-  }
-  // INJECT CSS
-  var css = document.createElement("style");
-  css.type = "text/css";
-  css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-  document.body.appendChild(css);
+    // INJECT CSS
+    var css = document.createElement("style");
+    css.type = "text/css";
+    css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+    document.body.appendChild(css);
 };

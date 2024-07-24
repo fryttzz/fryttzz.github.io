@@ -10,6 +10,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -21,15 +22,20 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  background: linear-gradient(
+      270deg,
+      rgba(225, 255, 255, 0.87),
+      rgba(255, 255, 0, 1)
+    )
+    text;
+  color: transparent;
+  font-size: 2em;
+  line-height: 1;
 }
 
 #app {
-  max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
 }
 
 .main {
@@ -44,19 +50,20 @@ h1 {
   flex-direction: column;
   height: 100vh;
   width: 100%;
+  text-align: center;
 }
 
-.intro p{
+.intro p {
   font-size: 3.2em;
   line-height: 1.1;
 }
 
-.intro p span{
+.intro p span {
   color: #ffff00;
 }
 
 #main-title {
-  color:#fff;
+  color: #fff;
   font-size: 2rem;
   outline: none;
   text-decoration: none;
@@ -64,7 +71,7 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.socials a{
+.socials a {
   width: 100%;
   height: 100%;
   outline: none;
@@ -72,21 +79,20 @@ h1 {
   margin: 0 8px 0 8px;
 }
 
-.socials img{
+.socials img {
   width: 50px;
   height: 50px;
   border: 0;
 }
 
-
 #scroll-down {
-    background-image: url('./public/twoforce.svg');
-    width: 70.71px;
-    height: 45.36px;
-    margin-top: 26px;
+  background-image: url("twoforce.svg");
+  width: 70.71px;
+  height: 45.36px;
+  margin-top: 26px;
 }
 
-#about-me{
+#about-me {
   display: flex;
   justify-content: center;
   place-items: center;
@@ -103,32 +109,63 @@ h1 {
   background-color: #ffff00;
 }
 
-.photo img{
+.photo img {
   height: 180px;
   width: 180px;
   border-radius: 50%;
 }
 
-#info .name{
+#info {
+  text-align: center;
+}
+
+#info .name {
   font-size: 1.5rem;
   font-weight: bold;
   margin: 8px;
 }
 
-#info .city{
+#info .city {
   font-size: 1rem;
   margin: 8px;
+}
+
+.content {
+  max-width: 600px;
+}
+
+.content p {
+  font-size: 16px;
+  text-align: justify;
+}
+
+#career {
+  display: none;
 }
 
 .bounce {
   animation: bounce 2s ease-in-out infinite;
 }
 @keyframes bounce {
-    70% { transform:translateY(0%); }
-    80% { transform:translateY(-15%); }
-    90% { transform:translateY(0%); }
-    95% { transform:translateY(-7%); }
-    97% { transform:translateY(0%); }
-    99% { transform:translateY(-3%); }
-    100% { transform:translateY(0); }
+  70% {
+    transform: translateY(0%);
+  }
+  80% {
+    transform: translateY(-15%);
+  }
+  90% {
+    transform: translateY(0%);
+  }
+  95% {
+    transform: translateY(-7%);
+  }
+  97% {
+    transform: translateY(0%);
+  }
+  99% {
+    transform: translateY(-3%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
