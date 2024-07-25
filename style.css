@@ -11,6 +11,14 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+
+  --gradient: linear-gradient(270deg, rgb(229, 252, 55), rgba(255, 255, 0, 1));
+  --gradient-text: linear-gradient(
+      270deg,
+      rgb(229, 252, 55),
+      rgba(255, 255, 0, 1)
+    )
+    text;
 }
 
 body {
@@ -22,14 +30,24 @@ body {
 }
 
 h1 {
-  background: linear-gradient(
-      270deg,
-      rgba(225, 255, 255, 0.87),
-      rgba(255, 255, 0, 1)
-    )
-    text;
+  background: var(--gradient-text);
   color: transparent;
   font-size: 2em;
+  line-height: 1;
+}
+
+h2 {
+  font-size: 1.5em;
+  line-height: 1;
+}
+
+h3 {
+  font-size: 1.25em;
+  line-height: 1;
+}
+
+h4 {
+  font-size: 1.1em;
   line-height: 1;
 }
 
@@ -59,7 +77,8 @@ h1 {
 }
 
 .intro p span {
-  color: #ffff00;
+  background: var(--gradient-text);
+  color: transparent;
 }
 
 #main-title {
@@ -106,7 +125,7 @@ h1 {
   height: 200px;
   width: 200px;
   border-radius: 50%;
-  background-color: #ffff00;
+  background: var(--gradient);
 }
 
 .photo img {
@@ -141,6 +160,18 @@ h1 {
 
 #career {
   display: none;
+  height: max-content;
+  width: 600px;
+}
+
+h3 a {
+  outline: none;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.job-description {
+  font-size: 16px;
+  text-align: justify;
 }
 
 .bounce {

@@ -39,77 +39,79 @@ document.querySelector('#app').innerHTML = `
         <p class='city'>🌐 LAGES - SC</p>
       </div>
     </setion>
-    <main class='content'>
+    <section class='content'>
       <h1>sobre mim</h1>
       <p>Apaixonado por tecnologia desde muito novo, brasileiro, nascido em Lages, SC, no ano de 2001. Comecei minha jornada no mundo TECH através do curso Técnico em Informática do Instituto Federal de Santa Catarina. Iniciei o ensino superior na gradução de Ciências da Computação no Centro Universitário Unifacvest em 2019, onde também tive minha primeira oportunidade de emprego como Suporte Técnico. Atualmente sou Técnico em Informática na empresa Profuzzy Consultoria e Projetos. Nas horas vagas estou arranhando meu violão ou rabiscando algum papel 🎸🎨</p>
-    </main>
-    <div id="career">
+    </section>
+    <section id="career">
         <h1>experiência</h1>
         <div>
-            <h3>Técnico em Informática</h3>
-            <p>Descrição</p>
+            <h3>Técnico em Informática - <a href="https://www.profuzzy.com.br" target='_blank' rel="noopener noreferrer">Profuzzy Consultoria e Projetos Ltda</a></h3>
+            <h4>Jan 2021 - Presente</h4>
+            <p class="job-description">Descrição</p>
         </div>
         <div>
-            <h3>Suporte Técnico</h3>
-            <p>Descrição</p>
+            <h3>Suporte Técnico - <a href="https://www.unifacvest.edu.br" target='_blank' rel="noopener">Centro Universitário Unifacvest</a></h3>
+            <h4>Jul 2019 - Dez 2020</h4>
+            <p class="job-description">Descrição</p>
         </div>
-    </div>
+    </section>
   </div>
 `
 
 var TxtType = function (el, toRotate, period) {
-    this.toRotate = toRotate;
-    this.el = el;
-    this.loopNum = 0;
-    this.period = parseInt(period, 10) || 2000;
-    this.txt = '';
-    this.tick();
-    this.isDeleting = false;
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000;
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
 };
 
 TxtType.prototype.tick = function () {
-    var i = this.loopNum % this.toRotate.length;
-    var fullTxt = this.toRotate[i];
+  var i = this.loopNum % this.toRotate.length;
+  var fullTxt = this.toRotate[i];
 
-    if (this.isDeleting) {
-        this.txt = fullTxt.substring(0, this.txt.length - 1);
-    } else {
-        this.txt = fullTxt.substring(0, this.txt.length + 1);
-    }
+  if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+  } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+  }
 
-    this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+  this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
 
-    var that = this;
-    var delta = 200 - Math.random() * 100;
+  var that = this;
+  var delta = 200 - Math.random() * 100;
 
-    if (this.isDeleting) { delta /= 2; }
+  if (this.isDeleting) { delta /= 2; }
 
-    if (!this.isDeleting && this.txt === fullTxt) {
-        delta = this.period;
-        this.isDeleting = true;
-    } else if (this.isDeleting && this.txt === '') {
-        this.isDeleting = false;
-        this.loopNum++;
-        delta = 500;
-    }
+  if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+  }
 
-    setTimeout(function () {
-        that.tick();
-    }, delta);
+  setTimeout(function () {
+    that.tick();
+  }, delta);
 };
 
 window.onload = function () {
-    var elements = document.getElementsByClassName('typewrite');
-    for (var i = 0; i < elements.length; i++) {
-        var toRotate = elements[i].getAttribute('data-type');
-        var period = elements[i].getAttribute('data-period');
-        if (toRotate) {
-            new TxtType(elements[i], JSON.parse(toRotate), period);
-        }
+  var elements = document.getElementsByClassName('typewrite');
+  for (var i = 0; i < elements.length; i++) {
+    var toRotate = elements[i].getAttribute('data-type');
+    var period = elements[i].getAttribute('data-period');
+    if (toRotate) {
+      new TxtType(elements[i], JSON.parse(toRotate), period);
     }
-    // INJECT CSS
-    var css = document.createElement("style");
-    css.type = "text/css";
-    css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-    document.body.appendChild(css);
+  }
+  // INJECT CSS
+  var css = document.createElement("style");
+  css.type = "text/css";
+  css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+  document.body.appendChild(css);
 };
