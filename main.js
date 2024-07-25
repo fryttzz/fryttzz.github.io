@@ -56,7 +56,7 @@ document.querySelector('#app').innerHTML = `
             <div class="previous-job-tick"></div>
             <h3>Suporte Técnico - <a href="https://www.unifacvest.edu.br" target='_blank' rel="noopener">Centro Universitário Facvest - Unifacvest</a></h3>
             <h4>Jul 2019 - Dez 2020</h4>
-            <p class="job-description">A <strong>Unifacvest</strong> é um Instituto de Ensino Superior com fins lucrativos, possuindo graduações, pos-graduações e mestrados. Atuei na equipe de Suporte Técnico, realizando as atividades de: montagem e manutenção de computadores e outros aperelhos de informática. Prestar consultoria para aquisição de novos equipamentos e/ou peças para reposição. Responder chamados para auxilio ou correções do dia-a-dia.</p>
+            <p class="job-description">A <strong>Unifacvest</strong> é um Instituto de Ensino Superior com fins lucrativos, possuindo graduações, pos-graduações e mestrados. Atuei na equipe de Suporte Técnico, realizando as atividades de: montagem e manutenção de computadores e outros aperelhos de informática. Prestar consultoria para aquisição de novos equipamentos e/ou peças para reposição. Responder chamados para auxílio ou correções do dia-a-dia.</p>
         </div>
     </section>
   </div>
