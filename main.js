@@ -1,9 +1,9 @@
 
-var photo = 'matheus.jpg'
-var linkedin = 'linkedin.svg'
-var github = 'github.svg'
-var instagram = 'instagram.svg'
-var email = 'email.svg'
+var photo = '/matheus.jpg'
+var linkedin = '/linkedin.svg'
+var github = '/github.svg'
+var instagram = '/instagram.svg'
+var email = '/email.svg'
 
 document.querySelector('#app').innerHTML = `
   <div class='main'>
