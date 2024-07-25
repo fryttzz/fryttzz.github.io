@@ -45,15 +45,17 @@ document.querySelector('#app').innerHTML = `
     </section>
     <section id="career">
         <h1>experiência</h1>
-        <div>
+        <div class="job">
+            <div class="current-job-tick"></div>
             <h3>Técnico em Informática - <a href="https://www.profuzzy.com.br" target='_blank' rel="noopener noreferrer">Profuzzy Consultoria e Projetos Ltda</a></h3>
             <h4>Jan 2021 - Presente</h4>
-            <p class="job-description">Descrição</p>
+            <p class="job-description"></p>
         </div>
-        <div>
+        <div class="job">
+            <div class="previous-job-tick"></div>
             <h3>Suporte Técnico - <a href="https://www.unifacvest.edu.br" target='_blank' rel="noopener">Centro Universitário Unifacvest</a></h3>
             <h4>Jul 2019 - Dez 2020</h4>
-            <p class="job-description">Descrição</p>
+            <p class="job-description"></p>
         </div>
     </section>
   </div>

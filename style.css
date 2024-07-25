@@ -42,7 +42,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.25em;
+  font-size: 1.2em;
   line-height: 1;
 }
 
@@ -159,9 +159,58 @@ h4 {
 }
 
 #career {
-  display: none;
   height: max-content;
   width: 600px;
+}
+
+.job {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  grid-template-rows: 40px 35px 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  margin-bottom: 16px;
+  transition: all 0.2s ease-in-out;
+}
+
+.job h3 {
+  grid-area: 1 / 2 / 2 / 3;
+  align-self: center;
+  margin: 0;
+}
+
+.job h4 {
+  grid-area: 2 / 2 / 3 / 3;
+  align-self: center;
+  margin: 0;
+}
+
+.job p {
+  grid-area: 3 / 2 / 4 / 3;
+  text-align: justify;
+  align-self: center;
+  margin: 0;
+}
+
+.current-job-tick {
+  grid-area: 1 / 1 / 2 / 2;
+  height: 10px;
+  width: 10px;
+  background: var(--gradient);
+  border-radius: 50%;
+  align-self: center;
+  justify-self: center;
+}
+
+.previous-job-tick {
+  grid-area: 1 / 1 / 2 / 2;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  align-self: center;
+  justify-self: center;
+  border: 2px solid #ff0;
+  border-radius: 50%;
 }
 
 h3 a {
@@ -172,6 +221,10 @@ h3 a {
 .job-description {
   font-size: 16px;
   text-align: justify;
+}
+
+.job:hover {
+  transform: scale(1.05);
 }
 
 .bounce {
