@@ -8,8 +8,8 @@ var email = 'email.svg'
 document.querySelector('#app').innerHTML = `
   <div class='main'>
     <section class='intro'>
-      <p>Olá, sou <span><b>Matheus Santos.</b></span></p>
-      <a id="main-title" href="" class="typewrite" data-period="2000" data-type='["Suporte Técnico", "Estudante de Ciência da Computação",  "Entusiasta Tech" ]'>
+      <p>Olá, sou <span><strong>Matheus Santos.</strong></span></p>
+      <a id="main-title" href="" class="typewrite" data-period="2000" data-type='["Suporte Técnico", "Estudante de Ciência da Computação", "Desenvolvedor Web", "Entusiasta Tech" ]'>
         <span class="wrap"></span>
       </a>
       <div class='socials'>
@@ -49,13 +49,14 @@ document.querySelector('#app').innerHTML = `
             <div class="current-job-tick"></div>
             <h3>Técnico em Informática - <a href="https://www.profuzzy.com.br" target='_blank' rel="noopener noreferrer">Profuzzy Consultoria e Projetos Ltda</a></h3>
             <h4>Jan 2021 - Presente</h4>
-            <p class="job-description"></p>
+            <p class="job-description">A <strong>Profuzzy</strong> é uma empresa de consultoria e projetos instituidade em 1988, voltada para as mais diversas áreas do setor público e privado. Possuí como carro chefe a Mobilidade Urbana (Transito, Transporte Coletivo, Estacionamento Rotativo, etc.) e os serviços funeários e cemiteriais. Atuo na equipe técnica, sendo responsável pelas atividades de: obtenção e aferição de dados espaciais. Modelagem de objetos para aplicações geográficas. Elaboração, edição e impressão de mapas temáticos/figuras georreferenciadas. Escrever scripts e rotinas para tratamento e visualização de dados. Suporte técnico.</p>
+            <p class="tecnologies"><strong>Tecnologias:</strong> Javascript, Typescript, Python, HTML, CSS, Node.js, React, QGIS, Figma.</p>
         </div>
         <div class="job">
             <div class="previous-job-tick"></div>
-            <h3>Suporte Técnico - <a href="https://www.unifacvest.edu.br" target='_blank' rel="noopener">Centro Universitário Unifacvest</a></h3>
+            <h3>Suporte Técnico - <a href="https://www.unifacvest.edu.br" target='_blank' rel="noopener">Centro Universitário Facvest - Unifacvest</a></h3>
             <h4>Jul 2019 - Dez 2020</h4>
-            <p class="job-description"></p>
+            <p class="job-description">A <strong>Unifacvest</strong> é um Instituto de Ensino Superior com fins lucrativos, possuindo graduações, pos-graduações e mestrados. Atuei na equipe de Suporte Técnico, realizando as atividades de: montagem e manutenção de computadores e outros aperelhos de informática. Prestar consultoria para aquisição de novos equipamentos e/ou peças para reposição. Responder chamados para auxilio ou correções do dia-a-dia.</p>
         </div>
     </section>
   </div>

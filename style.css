@@ -34,6 +34,7 @@ h1 {
   color: transparent;
   font-size: 2em;
   line-height: 1;
+  margin: 16px 0 16px 0;
 }
 
 h2 {
@@ -82,7 +83,7 @@ h4 {
 }
 
 #main-title {
-  color: #fff;
+  color: rgba(255, 255, 255, 0.87);
   font-size: 2rem;
   outline: none;
   text-decoration: none;
@@ -141,7 +142,7 @@ h4 {
 #info .name {
   font-size: 1.5rem;
   font-weight: bold;
-  margin: 8px;
+  margin: 16px 0 8px 0;
 }
 
 #info .city {
@@ -150,7 +151,7 @@ h4 {
 }
 
 .content {
-  max-width: 600px;
+  max-width: 650px;
 }
 
 .content p {
@@ -160,13 +161,13 @@ h4 {
 
 #career {
   height: max-content;
-  width: 600px;
+  width: 650px;
 }
 
 .job {
   display: grid;
   grid-template-columns: 30px 1fr;
-  grid-template-rows: 40px 35px 1fr;
+  grid-template-rows: 40px 35px 1fr 35px;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   margin-bottom: 16px;
@@ -176,26 +177,35 @@ h4 {
 .job h3 {
   grid-area: 1 / 2 / 2 / 3;
   align-self: center;
-  margin: 0;
+  margin: 16px 0 8px 0;
 }
 
 .job h4 {
   grid-area: 2 / 2 / 3 / 3;
   align-self: center;
-  margin: 0;
+  margin: 16px 0 8px 0;
 }
 
-.job p {
+.job .job-description {
+  font-size: 16px;
   grid-area: 3 / 2 / 4 / 3;
   text-align: justify;
   align-self: center;
   margin: 0;
 }
 
+.job .tecnologies {
+  font-size: 16px;
+  grid-area: 4 / 2 / 5 / 3;
+  text-align: justify;
+  align-self: center;
+  margin: 16px 0 0 0;
+}
+
 .current-job-tick {
   grid-area: 1 / 1 / 2 / 2;
-  height: 10px;
-  width: 10px;
+  height: 12px;
+  width: 12px;
   background: var(--gradient);
   border-radius: 50%;
   align-self: center;
@@ -218,17 +228,12 @@ h3 a {
   color: rgba(255, 255, 255, 0.87);
 }
 
-.job-description {
-  font-size: 16px;
-  text-align: justify;
-}
-
 .job:hover {
   transform: scale(1.05);
 }
 
 .bounce {
-  animation: bounce 2s ease-in-out infinite;
+  animation: bounce 1.5s ease-in-out infinite;
 }
 @keyframes bounce {
   70% {
